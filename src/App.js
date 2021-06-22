@@ -7,9 +7,9 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      {/* <div className="main-container">
+      <div className="main-container">
       <Characters />
-      </div> */}
+      </div>
       
     </div>
   );
