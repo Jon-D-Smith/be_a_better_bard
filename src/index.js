@@ -1,11 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "./store";
+import router from "./router";
+// import Nav from "./components/Navbar";
 
 
 ReactDOM.render(
- <App />,
+  <App />,
   document.getElementById('root')
 );
 
