@@ -4,7 +4,6 @@ import { Provider } from "react-redux";
 // import store from "./store";
 import router from "./router";
 import Nav from "./components/Navbar";
-
 const App = () => {
   return (
 

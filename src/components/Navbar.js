@@ -31,6 +31,10 @@ margin:0;
     font-size: 1.5rem;
 }
 
+.nav:hover {
+    border-bottom: 2px solid white;
+}
+
 .nav-right{
     margin-left: auto;
     margin-right: 2%;
