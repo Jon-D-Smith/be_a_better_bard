@@ -8,8 +8,7 @@ const Navbar = () => {
             <a className="menu" href="#">All Spells</a>
             <a className="account menu" href="#">Profile</a>
             <Link to="/characters">
-                <h2>Character</h2>
-                {/* <MenuItem style={{ backgroundColor: 'rgba(20,20,20, 0.9)', color: '#ffffff', cursor: 'pointer' }} onClick={this.handleLogout}>Logout</MenuItem> */}
+                <p>Character</p>
             </Link>
         </div>
 
