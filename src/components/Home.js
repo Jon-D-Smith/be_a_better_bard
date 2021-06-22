@@ -1,12 +1,13 @@
-import'../App.css'
 import Characters from './Characters'
 import styled from 'styled-components'
+
+
 const Home = () => {
   return (
     <div className="main-container">
       <Characters />
     <Spells><h1>Spell List</h1></Spells>
-      <h1>Add Spell</h1>
+      <h1 className="spell-btn">Add Spell</h1>
     </div>
   );
 }

@@ -24,6 +24,7 @@ const CharacterList = styled.div`
   height: 80%;
   border: 1px solid black;
   margin-top: 1%;
+  margin-left: 1%;
   display: flex;
   flex-direction: column;
   align-items: center;

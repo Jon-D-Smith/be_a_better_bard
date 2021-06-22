@@ -12,5 +12,6 @@ export default (
     {/* <Route path='/character/:id' component={Character} /> */}
     <Route path='/characters' component={Characters} />
     <Route exact path="/home" component={Home} />
+    <Route path="/" component={Home} />
   </Switch>
 );

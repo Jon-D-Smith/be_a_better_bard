@@ -12,3 +12,16 @@ body {
   justify-content: space-evenly;
   gap: 15%;
 }
+
+.spell-btn {
+  width: 10rem;
+  height: 4rem;
+  background-color: rgb(110, 255, 66);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  margin-right: 1%;
+}
