@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-
+import Character from './Character'
 
 const Characters = () => {
     return ( 
@@ -9,8 +9,7 @@ const Characters = () => {
                     <h2>Characters</h2>
                 </header>
                 <CharacterTab>
-                    <img className="headshot" src="https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/369/420/618/636272705936709430.png" />
-                    <h2 >Butters</h2>
+                    <Character name={"Pringles the Bard Elf"} url={"https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/369/420/618/636272705936709430.png"}/>
                 </CharacterTab>        
             </CharacterList>
         
