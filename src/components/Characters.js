@@ -10,7 +10,7 @@ const Characters = () => {
                 </header>
                 <CharacterTab>
                     <img className="headshot" src="https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/369/420/618/636272705936709430.png" />
-                    <h3>Butters</h3>
+                    <h2 >Butters</h2>
                 </CharacterTab>        
             </CharacterList>
         
@@ -18,6 +18,23 @@ const Characters = () => {
      );
 }
 
+const CharacterTab = styled.div`
+    display: flex;
+    gap: 30%;
+    justify-content: flex-start;
+    justify-content: center;
+    border: 1px solid black;
+  .headshot{
+      height: 50px;
+      width:50px;
+      border-radius: 100%;
+      border: 1px solid white;
+      
+  }
+
+
+ 
+`;
 
 const CharacterList = styled.div`
   width: 20%;
@@ -27,22 +44,9 @@ const CharacterList = styled.div`
   margin-left: 1%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  text-align: center;
 `;
 
-const CharacterTab = styled.div`
-    display: flex;
-    justify-content: space-between;
 
-  .headshot{
-      height: 50px;
-      width:50px;
-      border-radius: 100%;
-      border: 1px solid white;
-      
-  }
-
- 
-`;
  
 export default Characters;

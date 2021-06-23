@@ -9,7 +9,7 @@ body {
 .main-container {
   display: flex;
   height: 800px;
-  justify-content: space-evenly;
+  justify-content: space-between;
   gap: 15%;
 }
 
