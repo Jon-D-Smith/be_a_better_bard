@@ -31,11 +31,8 @@ const CharacterList = styled.div`
 `;
 
 const CharacterTab = styled.div`
-  display: flex;
-  align-self: flex-start;
-  align-items: center;
-  gap: 10%;
-    
+    display: flex;
+    justify-content: space-between;
 
   .headshot{
       height: 50px;
@@ -44,6 +41,8 @@ const CharacterTab = styled.div`
       border: 1px solid white;
       
   }
+
+ 
 `;
  
 export default Characters;
