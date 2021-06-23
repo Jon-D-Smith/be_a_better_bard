@@ -13,12 +13,12 @@ const Home = () => {
 }
 
 const Spells = styled.div`
-width: 40%;
+width: 60%;
 height: 80%;
-border:1px solid black ;
 display: flex;
 justify-content: center;
 margin-top: 1%;
+box-shadow:0px 0px 4px rgb(110, 255, 66);
 `;
 
 export default Home;

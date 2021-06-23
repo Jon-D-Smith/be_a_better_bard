@@ -23,13 +23,14 @@ const CharacterTab = styled.div`
     gap: 30%;
     justify-content: flex-start;
     justify-content: center;
-    border: 1px solid black;
+    background-color: rgb(110, 255, 66);
+    color:white;
   .headshot{
       height: 50px;
       width:50px;
       border-radius: 100%;
       border: 1px solid white;
-      
+      align-self: center;
   }
 
 
@@ -39,12 +40,12 @@ const CharacterTab = styled.div`
 const CharacterList = styled.div`
   width: 20%;
   height: 80%;
-  border: 1px solid black;
   margin-top: 1%;
   margin-left: 1%;
   display: flex;
   flex-direction: column;
   text-align: center;
+  box-shadow:0px 0px 4px rgb(110, 255, 66);
 `;
 
 

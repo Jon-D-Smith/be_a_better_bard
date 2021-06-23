@@ -10,7 +10,6 @@ body {
   display: flex;
   height: 800px;
   justify-content: space-between;
-  gap: 15%;
 }
 
 .spell-btn {
