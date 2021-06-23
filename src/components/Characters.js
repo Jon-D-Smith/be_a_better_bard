@@ -8,33 +8,18 @@ const Characters = () => {
                 <header>
                     <h2>Characters</h2>
                 </header>
-                <CharacterTab>
-                    <Character name={"Pringles the Bard Elf"} url={"https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/369/420/618/636272705936709430.png"}/>
-                </CharacterTab>        
+               
+                <Character classnName="characterTab" name={"Pringles the Bard Elf"} url={"https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/369/420/618/636272705936709430.png"}/>
+                <Character name={"Tingles the Bard Elf"} url={"https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/369/420/618/636272705936709430.png"}/>
+                 
+                
+                     
             </CharacterList>
         
         
      );
 }
 
-const CharacterTab = styled.div`
-    display: flex;
-    gap: 30%;
-    justify-content: flex-start;
-    justify-content: center;
-    background-color: rgb(110, 255, 66);
-    color:white;
-  .headshot{
-      height: 50px;
-      width:50px;
-      border-radius: 100%;
-      border: 1px solid white;
-      align-self: center;
-  }
-
-
- 
-`;
 
 const CharacterList = styled.div`
   width: 20%;
@@ -45,6 +30,16 @@ const CharacterList = styled.div`
   flex-direction: column;
   text-align: center;
   box-shadow:0px 0px 4px rgb(110, 255, 66);
+
+  .headshot{
+      height: 50px;
+      width:50px;
+      border-radius: 100%;
+      border: 1px solid white;
+      align-self: center;
+  }
+
+
 `;
 
 
