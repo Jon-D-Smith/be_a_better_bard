@@ -50,7 +50,7 @@
         {
             "name": "Larry the cucumber",
             "url":"https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/369/420/618/636272705936709430.png",
-            "color":"rgb(0,255,0)",
+            "color":"#327",
             "spells": [
                 {
                     "index": "animal-shapes",
