@@ -22,10 +22,6 @@ const Characters = () => {
 
 
 const CharacterList = styled.div`
-  width: 20%;
-  height: 80%;
-  margin-top: 1%;
-  margin-left: 1%;
   display: flex;
   flex-direction: column;
   text-align: center;

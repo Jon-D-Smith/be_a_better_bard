@@ -17,7 +17,7 @@ const Navbar = () => {
 }
 
 const Navigation = styled.div`
-margin:0;
+margin:-1rem;
   display: flex;
   align-items: center;
   gap: 5%;

@@ -4,16 +4,16 @@ const Character = ({name, url}) => {
     return ( 
         <CharacterTab>
         <img className="headshot" src={url} />
-        <h2 >{name}</h2>
+        <h3 >{name}</h3>
         </CharacterTab>
      );
 }
 
 
 const CharacterTab = styled.div`
-    display: flex;
-    gap: 5%;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-start: 3;
     background-color: rgb(110, 255, 66);
     color:white;
     margin-top:1%;
