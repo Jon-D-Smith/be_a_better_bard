@@ -50,6 +50,7 @@
         {
             "name": "Larry the cucumber",
             "url":"https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/369/420/618/636272705936709430.png",
+            "color":"rgb(0,255,0)",
             "spells": [
                 {
                     "index": "animal-shapes",
@@ -66,6 +67,7 @@
         {
             "name": "Simple Tim",
             "url":"https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/369/420/618/636272705936709430.png",
+            "color":"rgb(0,0,255)",
             "spells": [
                 {
                     "index": "animal-shapes",

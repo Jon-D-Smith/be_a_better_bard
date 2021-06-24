@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-const Character = ({name, url}) => {
+const Character = ({name, url, color}) => {
     return ( 
-        <CharacterTab>
+        <CharacterTab style={{backgroundColor:color}}>
             <div></div>
         <img className="headshot" src={url} />
         
