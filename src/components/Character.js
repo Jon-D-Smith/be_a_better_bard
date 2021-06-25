@@ -3,9 +3,8 @@ import styled from "styled-components";
 const Character = ({name, url, color}) => {
     return ( 
         <CharacterTab style={{backgroundColor:color}}>
-            <div></div>
+        <div></div>
         <img className="headshot" src={url} />
-        
         <h3 >{name}</h3>
         </CharacterTab>
      );

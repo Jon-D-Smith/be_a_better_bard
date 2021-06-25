@@ -75,7 +75,6 @@ const CharacterList = styled.div`
   text-align: center;
   
   .box{
-      box-shadow:0px 0px 4px rgb(110, 255, 66);
       flex-direction: column;
       margin: 1em;
   }
