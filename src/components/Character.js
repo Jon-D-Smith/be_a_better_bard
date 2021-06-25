@@ -14,7 +14,7 @@ const Character = ({name, url, color}) => {
 
 const CharacterTab = styled.div`
     display: grid;
-    grid-template-columns: .5fr 3.5fr 8fr;
+    grid-template-columns: .5fr 1.5fr 10fr;
     justify-content: space-evenly;
     background-color: rgb(110, 255, 66);
     color:white;

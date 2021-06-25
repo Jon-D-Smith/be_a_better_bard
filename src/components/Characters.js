@@ -35,7 +35,7 @@ const CharacterList = styled.div`
   display: flex;
   flex-direction: column; 
   text-align: center;
-  box-shadow:0px 0px 4px rgb(110, 255, 66);
+  /* box-shadow:0px 0px 4px rgb(110, 255, 66); */
 
   .headshot{
       height: 50px;

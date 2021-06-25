@@ -15,7 +15,7 @@ const Home = () => {
 const Spells = styled.div`
 display: flex;
 justify-content: center;
-box-shadow:0px 0px 4px rgb(110, 255, 66);
+/* box-shadow:0px 0px 4px rgb(110, 255, 66); */
 min-height: 600px;
 `;
 
