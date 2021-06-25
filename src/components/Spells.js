@@ -47,6 +47,7 @@ const Spells = props => {
       <Spell
         key={i}
         name={e.name}
+      // soundbite={e.sound}
       // url={e.url}
       // color={e.color}
       // spells={e.spells}

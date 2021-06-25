@@ -23,3 +23,5 @@ CREATE TABLE routes (
 -- Indices -------------------------------------------------------
 
 CREATE UNIQUE INDEX routes_pkey ON routes(route_id int4_ops,location_id int4_ops);
+
+"server": "json-server --watch db.json --port 3001"

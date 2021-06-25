@@ -7,12 +7,13 @@ import { useEffect, useState } from 'react';
 const Characters = props => {
     // const [characters, setCharacters] = useState(null);
     const [activeCharacter, setActiveCharacter] = useState(0);
+    const [spellLists, setSpellLists] = useState([]);
     const { characterMap } = props;
 
 
     // useEffect(() => {
-    //     axios.get(`http://localhost:3001/characters`)
-    //         .then(result => setCharacterMap(result.data))
+    //     axios.get(`http://localhost:3001/characters`, { id: 0 })
+    //         .then(result => setSpellLists(result.data))
     // }, [])
 
     const handleClick = e => {
