@@ -70,9 +70,8 @@ const Characters = props => {
 
 
 const CharacterList = styled.div`
-  display: flex;
-  flex-direction: row; 
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: 30% 70%;
   text-align: center;
   
   .box{
