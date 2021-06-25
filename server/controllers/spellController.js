@@ -5,22 +5,20 @@ const pool = new Pool({
     rejectUnauthorized: false
   }
 });
-
 module.exports = {
 
 
   getSpellListById:  async (req,res) => {
+    const {id} = req.params
     try{
-      const client = await pool.connect();
-      const result = await client.query(`
+      const result = await pool.query(`
       SELECT sl.*, s.* 
       FROM SPELL_LIST sl 
       INNER JOIN SPELLS s ON sl.spell_id = s.spell_id
-      WHERE character_id = ${1} order by spell_list_id`);
+      WHERE character_id = ${id} order by spell_list_id`);
 
       const results = { 'results': (result) ? result.rows : null};
       res.json( results );
-      client.release();
     } catch (err) {
       console.error(err);
       res.json("Error " + err);
@@ -30,11 +28,9 @@ module.exports = {
 
   getSpellList: async (req, res) => {
     try {
-      const client = await pool.connect();
-      const result = await client.query('SELECT * FROM spells');
+      const result = await pool.query('SELECT * FROM spells');
       const results = { 'results': (result) ? result.rows : null};
       res.json( results );
-      client.release();
     } catch (err) {
       console.error(err);
       res.json("Error " + err);
