@@ -18,6 +18,7 @@ const Characters = props => {
     const handleClick = e => {
         // console.log(e.target.value);
         setActiveCharacter(e.target.value);
+        console.log("Hi")
     };
 
     const characterList = characterMap.map((e, i) => {
@@ -30,7 +31,7 @@ const Characters = props => {
                     url={e.url}
                     color={e.color}
                 // spells={e.spells}
-                // onClick={handleClick}
+                handleClick={handleClick}
                 />
                 <button value={i} onClick={handleClick}>+</button>
             </>

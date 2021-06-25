@@ -61,7 +61,6 @@ const Spells = props => {
   return (
     <Base>
       {!currentName && <p> Select a Character to view their spell list</p>}
-      <h4>{currentName}</h4>
       {currentSpellList && spellList}
     </Base>
     // <CharacterList>
