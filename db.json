@@ -49,8 +49,8 @@
     "characters": [
         {
             "name": "Larry the cucumber",
-            "url":"https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/369/420/618/636272705936709430.png",
-            "color":"#327",
+            "url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/369/420/618/636272705936709430.png",
+            "color": "#327",
             "spells": [
                 {
                     "index": "animal-shapes",
@@ -66,17 +66,17 @@
         },
         {
             "name": "Simple Tim",
-            "url":"https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/369/420/618/636272705936709430.png",
-            "color":"rgb(0,0,255)",
+            "url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/369/420/618/636272705936709430.png",
+            "color": "rgb(0,0,255)",
             "spells": [
                 {
-                    "index": "animal-shapes",
-                    "name": "Animal Shapes",
+                    "index": "Random-spell",
+                    "name": "Random Shapes",
                     "url": "/api/spells/animal-shapes"
                 },
                 {
                     "index": "animate-dead",
-                    "name": "Animate Dead",
+                    "name": "Random Dead",
                     "url": "/api/spells/animate-dead"
                 }
             ]
