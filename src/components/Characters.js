@@ -16,25 +16,23 @@ const Characters = props => {
     //         .then(result => setSpellLists(result.data))
     // }, [])
 
-    const handleClick = e => {
-        // console.log(e.target.value);
-        setActiveCharacter(e.target.value);
-        console.log("Hi")
+    const handleClick = (e,i) => {
+        setActiveCharacter(i.i)
     };
 
     const characterList = characterMap.map((e, i) => {
         // console.log(e);
         return (
             <>
+            
                 <Character
                     key={i}
                     name={e.name}
                     url={e.url}
                     color={e.color}
                 // spells={e.spells}
-                handleClick={handleClick}
+                    handleClick={() => handleClick(e,i={i})}
                 />
-                <button value={i} onClick={handleClick}>+</button>
             </>
         );
     });

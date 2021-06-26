@@ -18,6 +18,7 @@ const CharacterTab = styled.div`
     background-color: rgb(110, 255, 66);
     color:white;
     margin-top:1%;
+    cursor: pointer;
 `;
  
 export default Character;
