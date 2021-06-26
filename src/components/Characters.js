@@ -27,7 +27,6 @@ const Characters = props => {
     };
 
     const characterList = characterMap.map((e, i) => {
-        // console.log(e);
         return (
 
 

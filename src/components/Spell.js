@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Spell = ({ name }) => {
+const Spell = ({ name}) => {
   return (
     <SpellTab style={{ backgroundColor: 'purple' }}>
       <div></div>
@@ -18,7 +18,7 @@ const SpellTab = styled.div`
     justify-content: space-evenly;
     background-color: rgb(110, 255, 66);
     color:white;
-    margin-top:1%;
+    margin-bottom:1rem;
 `;
 
 export default Spell;
