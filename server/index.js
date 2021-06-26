@@ -6,7 +6,8 @@ const session = require("express-session");
 const port = process.env.SERVER_PORT || 3001;
 const app = express();
 
-const { getSpellListById, getSpellList } = require('./controllers/spellController');
+const { getSpellList, getSpellsBySpellListId } = require('./controllers/spellController');
+const { getCharacterListById } = require('./controllers/characterController');
 
 app.use(express.json());
 
@@ -14,6 +15,7 @@ app.use(express.json());
 
 //SPELLS ENDPOINT
 app.get("/spells", getSpellList);
-app.get("/characters/:id", getSpellListById);
+app.get("/spells/:id", getSpellsBySpellListId);
+app.get("/characters/:id", getCharacterListById);
 
 app.listen(port, console.log(`Listening on ${port}`));
