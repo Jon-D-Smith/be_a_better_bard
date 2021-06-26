@@ -33,7 +33,7 @@ const Spells = props => {
     getCurrentSpellList();
   }, [characterKey]);
 
-
+ 
   const spellList = currentSpellList.map((e, i) => {
     // if (characterKey === i) {
     return (
@@ -47,6 +47,9 @@ const Spells = props => {
       <Spell
         key={i}
         name={e.name}
+        sound={e.sound}
+        soundName={e.soundName}
+        
       // soundbite={e.sound}
       // url={e.url}
       // color={e.color}

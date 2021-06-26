@@ -8,7 +8,7 @@ const Navbar = () => {
             <Logo>Be A Better Bard</Logo>
 
             <Link className="nav" to="home">Home</Link>
-            <Link className="nav" to="home">All Spells</Link>
+            <Link className="nav" to="/spells">All Spells</Link>
             <Link className="nav" to="/characters">Character</Link>
             <Link className="nav nav-right" to="home">Profile</Link>
 
