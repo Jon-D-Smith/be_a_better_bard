@@ -17,23 +17,23 @@ const Characters = props => {
     // }, [])
 
     const handleClick = (e,i) => {
+        console.log(i)
         setActiveCharacter(i.i)
     };
 
     const characterList = characterMap.map((e, i) => {
-        // console.log(e);
         return (
-            <>
+            
             
                 <Character
                     key={i}
                     name={e.name}
                     url={e.url}
                     color={e.color}
-                // spells={e.spells}
+                //  spells={e.spells}
                     handleClick={() => handleClick(e,i={i})}
                 />
-            </>
+           
         );
     });
 

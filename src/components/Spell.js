@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Spell = ({ name }) => {
+const Spell = ({ name}) => {
   return (
     <SpellTab style={{ backgroundColor: 'purple' }}>
       <div></div>
