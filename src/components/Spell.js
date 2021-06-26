@@ -18,7 +18,7 @@ const SpellTab = styled.div`
     justify-content: space-evenly;
     background-color: rgb(110, 255, 66);
     color:white;
-    margin-top:1%;
+    margin-bottom:1rem;
 `;
 
 export default Spell;
