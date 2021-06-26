@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {useState} from 'react'
 const Spell = ({ name, sound, soundName}) => {
+  name="Spell name"
 soundName = "This is a test - Test Artist"
 const [isVisible, setisVisible] = useState(false)
   return (

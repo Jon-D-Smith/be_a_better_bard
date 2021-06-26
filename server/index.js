@@ -2,13 +2,12 @@ require("dotenv").config();
 const path = require("path");
 const express = require("express");
 const session = require("express-session");
-
 const port = process.env.SERVER_PORT || 3001;
 const app = express();
-
+var cors = require('cors')
 const { getSpellList, getSpellsBySpellListId } = require('./controllers/spellController');
 const { getCharacterListById } = require('./controllers/characterController');
-
+app.use(cors())
 app.use(express.json());
 
 // app.use(express.static(`${__dirname}/../build`));

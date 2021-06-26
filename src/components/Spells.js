@@ -4,18 +4,24 @@ import Spell from './Spell'
 import axios from 'axios'
 import { useEffect, useState } from 'react';
 
-
 const Spells = props => {
   const { spellLists} = props;
 
-  const listLoad = (e) => {
-    console.log(e.target)
+  const listLoad = (e, value) => {
+    console.log(value)
+    axios.get(`http://localhost:3001/spells/${value.spell_list_id}`)
+        .then(data => {
+          
+          console.log(data)}
+          
+          )
+
   }
   
   const spellList = spellLists.map((e, i) => {
     return (
 
-      <p onClick={listLoad}>{e.name}</p>
+      <p onClick={() => listLoad(e,e)}>{e.name}</p>
 
     );
   });
