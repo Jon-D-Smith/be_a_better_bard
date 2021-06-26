@@ -14,6 +14,7 @@ const Spells = props => {
   
   const spellList = spellLists.map((e, i) => {
     return (
+
       <p onClick={listLoad}>{e.name}</p>
 
     );
