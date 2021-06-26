@@ -40,7 +40,7 @@ const Characters = props => {
 
         );
     });
-
+    
 
     return (
 
@@ -58,7 +58,7 @@ const Characters = props => {
                     <h1>Spells</h1>
                 </header>
                 {!spellLists && <p> Select a Character</p>}
-                {spellLists && <Spells spellLists={spellLists}></Spells>}
+                {spellLists && <Spells spellLists={spellLists} ></Spells>}
             </div>
 
         </CharacterList>
