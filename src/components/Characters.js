@@ -5,37 +5,40 @@ import Spells from './Spells'
 import axios from 'axios'
 import { useEffect, useState } from 'react';
 const Characters = props => {
-    // const [characters, setCharacters] = useState(null);
-    const [activeCharacter, setActiveCharacter] = useState(0);
-    const [spellLists, setSpellLists] = useState([]);
-    const { characterMap } = props;
+    const [characterMap, setCharacterMap] = useState([]);
+    const [characterId, setCharacterId] = useState(null);
+    const [spellLists, setSpellLists] = useState();
 
+    useEffect(() => {
+        axios.get(`/characters/${1}`)
+            .then(result => setCharacterMap(result.data.results))
+    }, [])
 
-    // useEffect(() => {
-    //     axios.get(`http://localhost:3001/characters`, { id: 0 })
-    //         .then(result => setSpellLists(result.data))
-    // }, [])
+    useEffect(() => {
+        characterMap.forEach(e => {
+            if (e.character_id == characterId) {
+                setSpellLists(e.spell_list)
+            }
+        })
+    }, [characterId])
 
     const handleClick = e => {
-        // console.log(e.target.value);
-        setActiveCharacter(e.target.value);
-        console.log("Hi")
+        setCharacterId(e.character_id)
     };
 
     const characterList = characterMap.map((e, i) => {
         // console.log(e);
         return (
-            <>
-                <Character
-                    key={i}
-                    name={e.name}
-                    url={e.url}
-                    color={e.color}
-                // spells={e.spells}
-                handleClick={handleClick}
-                />
-                <button value={i} onClick={handleClick}>+</button>
-            </>
+
+
+            <Character
+                key={i}
+                name={e.character_name}
+                url={e.character_img}
+                color={e.color}
+                handleClick={() => handleClick(e, i = { i })}
+            />
+
         );
     });
 
@@ -48,20 +51,15 @@ const Characters = props => {
                     <h1>Characters</h1>
                 </header>
                 <div>
-                    {/* {console.log(characterMap)} */}
-
-
-                    {/* <Character classnName="characterTab" name={"Pringles the Bard Elf"} url={"https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/369/420/618/636272705936709430.png"} color="#144" />
-                <Character name={"Tingles the Bard Elf"} url={"https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/369/420/618/636272705936709430.png"} color="#166" />
-                {characters.lenth && characters.map(character => <Character key={character.name} name={character.name} url={character.url} color={character.color} />)} */}
                 </div>
-                {characterList}
+                {characterMap.length && characterList}
             </div>
             <div className="box">
                 <header>
                     <h1>Spells</h1>
                 </header>
-                <Spells characterMap={characterMap} characterKey={activeCharacter}></Spells>
+                {!spellLists && <p> Select a Character</p>}
+                {spellLists && <Spells spellLists={spellLists}></Spells>}
             </div>
 
         </CharacterList>

@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-const Character = ({name, url, color, handleClick}) => {
-    return ( 
-        <CharacterTab onClick={handleClick} style={{backgroundColor:color}}>
-        <div></div>
-        <img className="headshot" src={url} />
-        <h3 >{name}</h3>
+const Character = ({ name, url, color, handleClick }) => {
+    return (
+        <CharacterTab onClick={handleClick} style={{ backgroundColor: color }}>
+            <div></div>
+            <img className="headshot" src={url} />
+            <h3 >{name}</h3>
         </CharacterTab>
-     );
+    );
 }
 
 
@@ -18,6 +18,9 @@ const CharacterTab = styled.div`
     background-color: rgb(110, 255, 66);
     color:white;
     margin-top:1%;
+    &:hover {
+        cursor: pointer;
+    }
 `;
- 
+
 export default Character;

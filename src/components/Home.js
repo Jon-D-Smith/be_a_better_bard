@@ -9,16 +9,16 @@ const Home = () => {
   const [characterMap, setCharacterMap] = useState([]);
   const [characterKey, setCharacterKey] = useState();
 
-  useEffect(() => {
-    axios.get(`http://localhost:3001/characters`)
-      .then(result => setCharacterMap(result.data))
-  }, [])
+  // useEffect(() => {
+  //   axios.get(`http://localhost:3001/characters`)
+  //     .then(result => setCharacterMap(result.data))
+  // }, [])
 
 
   return (
     <div className="main-container" >
       {/* {console.log('test')} */}
-      <Characters characterMap={characterMap} style={{ width: '70%' }} />
+      <Characters style={{ width: '70%' }} />
       {/* <Spells characterMap={characterMap} characterKey={0}></Spells> */}
       <h1 className="spell-btn">Add Spell</h1>
     </div>
