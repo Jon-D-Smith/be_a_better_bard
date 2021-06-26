@@ -4,6 +4,7 @@ import Spell from './Spell'
 import axios from 'axios'
 import { useEffect, useState } from 'react';
 
+
 const Spells = props => {
   const { spellLists} = props;
 
@@ -14,6 +15,7 @@ const Spells = props => {
   const spellList = spellLists.map((e, i) => {
     return (
       <p onClick={listLoad}>{e.name}</p>
+
     );
   });
 
