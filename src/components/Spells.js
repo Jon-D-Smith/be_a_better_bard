@@ -25,7 +25,7 @@ const Spells = props => {
   const spellList = spellLists.map((e, i) => {
     return (
   <>
-      <p onClick={() => listLoad(e,e)}>{e.name}</p>
+      <h1 className="spellListHeader" onClick={() => listLoad(e,e)}>{e.name}</h1>
       
       {spells && spells.map(spell => (spell.spell_list_id == e.spell_list_id ? <Spell name={spell.name} /> : <div></div>))}
 
@@ -53,6 +53,12 @@ const Base = styled.div`
       width:50px;
       border-radius: 100%;
       align-self: center;
+  }
+
+  .spellListHeader{
+    background: navy;
+    margin: 1rem 0;
+    cursor: pointer;
   }
 `;
 
