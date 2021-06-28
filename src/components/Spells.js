@@ -7,6 +7,8 @@ import { useEffect, useState } from 'react';
 const Spells = props => {
   const { spellLists} = props;
   const [spells, setSpells] = useState([])
+  
+
   const listLoad = (e, value) => {
     console.log(value)
     axios.get(`http://localhost:3001/spells/${value.spell_list_id}`)
@@ -25,7 +27,9 @@ const Spells = props => {
   <>
       <p onClick={() => listLoad(e,e)}>{e.name}</p>
       
-      {spells && spells.map(spell => <Spell name={spell.name} />)}
+      {spells && spells.map(spell => (spell.spell_list_id == e.spell_list_id ? <Spell name={spell.name} /> : <div></div>))}
+
+      {console.log(spellLists[0].spell_list_id)}
       </>
     );
   });
