@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 const Spells = props => {
   const { spellLists} = props;
   const [spells, setSpells] = useState([])
-  
+  const [isVisible, setIsVisible] = useState(false)
 
   const listLoad = (e, value) => {
     console.log(value)
@@ -15,6 +15,7 @@ const Spells = props => {
         .then(data => {
           const i = data.data
           const spells = i.results
+          setIsVisible(!isVisible)
           setSpells(spells)
           
           console.log(spells)
@@ -25,11 +26,12 @@ const Spells = props => {
   const spellList = spellLists.map((e, i) => {
     return (
   <>
-      <h1 className="spellListHeader" onClick={() => listLoad(e,e)}>{e.name}</h1>
-      
-      {spells && spells.map(spell => (spell.spell_list_id == e.spell_list_id ? <Spell name={spell.name} /> : <div></div>))}
-
-      {console.log(spellLists[0].spell_list_id)}
+  
+      <h1 className="spellListHeader" onClick={() => listLoad(e,e)}>{e.name}</h1> 
+      { isVisible ?  
+      spells && spells.map(spell => (spell.spell_list_id == e.spell_list_id ? <Spell name={spell.name} /> : <div></div>))
+      : <div></div>
+      }   
       </>
     );
   });
