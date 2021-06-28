@@ -17,8 +17,6 @@ const Spells = props => {
           const spells = i.results
           setIsVisible(!isVisible)
           setSpells(spells)
-          
-          console.log(spells)
         })
 
   }
