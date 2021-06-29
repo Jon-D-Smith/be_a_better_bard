@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import Character from './Character'
 import Spells from './Spells'
+import Modal from './Modal';
 
 import axios from 'axios'
 import { useEffect, useState } from 'react';
@@ -8,6 +9,8 @@ const Characters = props => {
     const [characterMap, setCharacterMap] = useState([]);
     const [characterId, setCharacterId] = useState(null);
     const [spellLists, setSpellLists] = useState();
+    const [show, setShow] = useState(false);
+    const [addForm, setAddForm] = useState();
 
     useEffect(() => {
         axios.get(`/characters/${1}`)
@@ -26,6 +29,27 @@ const Characters = props => {
     const handleClick = e => {
         setCharacterId(e.character_id)
     };
+    const hideModal = () => {
+        setAddForm(null)
+        setShow(false)
+    };
+    const showModal = e => {
+        setAddForm(e)
+        setShow(true)
+    };
+
+    // const onBlurHandler = () => {
+    //     this.timeOutId = setTimeout(() => {
+    //         this.setState({
+    //             isOpen: false
+    //         });
+    //     });
+    // }
+
+    // // If a child receives focus, do not close the popover.
+    // const onFocusHandler = () => {
+    //     clearTimeout(this.timeOutId);
+    // }
 
     const characterList = characterMap.map((e, i) => {
         return (
@@ -41,28 +65,33 @@ const Characters = props => {
 
         );
     });
-    
+
 
     return (
-
-        <CharacterList>
-            <div className="box">
-                <header>
-                    <h1>Characters</h1>
-                </header>
-                <div>
+        <>
+            <CharacterList>
+                <div className="box">
+                    <header>
+                        <h1>Characters</h1>
+                    </header>
+                    {characterMap.length && characterList}
+                    <button onClick={() => showModal('character')}>+</button>
                 </div>
-                {characterMap.length && characterList}
-            </div>
-            <div className="box">
-                <header>
-                    <h1>Spells</h1>
-                </header>
-                {!spellLists && <p> Select a Character</p>}
-                {spellLists && <Spells spellLists={spellLists} ></Spells>}
-            </div>
+                <div className="box">
+                    <header>
+                        <h1>Spells</h1>
+                    </header>
+                    {!spellLists && <p> Select a Character</p>}
+                    {spellLists &&
+                        <>
+                            <Spells spellLists={spellLists}></Spells>
+                            <button onClick={() => showModal('spellList')}>+</button>
+                        </>}
+                </div>
 
-        </CharacterList>
+            </CharacterList>
+            { show && <Modal hideModal={hideModal} whoAmI={addForm} onBlur={onBlurHandler} onFocus={onFocusHandler} />}
+        </>
 
 
     );

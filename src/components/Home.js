@@ -15,12 +15,16 @@ const Home = () => {
   // }, [])
 
 
+
+  // const handleClose
+
   return (
     <div className="main-container" >
       {/* {console.log('test')} */}
       <Characters style={{ width: '70%' }} />
       {/* <Spells characterMap={characterMap} characterKey={0}></Spells> */}
       <h1 className="spell-btn">Add Spell</h1>
+      {/* <Modal show={show} handleClick={hideModal} style={{ display: 'none' }}></Modal> */}
     </div>
   );
 }
