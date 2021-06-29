@@ -18,6 +18,7 @@ const Characters = props => {
         characterMap.forEach(e => {
             if (e.character_id == characterId) {
                 setSpellLists(e.spell_list)
+                console.log(e.spell_list.data)
             }
         })
     }, [characterId])
