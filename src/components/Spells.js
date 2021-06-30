@@ -35,8 +35,7 @@ const Spells = props => {
   const spellList = spellLists.map((e, i) => {
     return (
   <>
-  
-      <h1 className="spellListHeader" onClick={() => spellListIdChange(e)}>{e.name}</h1> 
+       <h1 className="spellListHeader" onClick={() => spellListIdChange(e)}>{e.name}</h1> 
       { spells && spells.map(spell => (spell.spell_list_id == e.spell_list_id ? <Spell name={spell.name}/> :<div></div>  ))}   
       </>
     );
