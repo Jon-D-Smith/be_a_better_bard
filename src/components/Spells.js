@@ -8,6 +8,7 @@ const Spells = props => {
   const { spellLists} = props;
   const [spells, setSpells] = useState([])
   const [isVisible, setIsVisible] = useState(false)
+  const [spellListId, setSpellListId] = useState()
 
   const listLoad = (e, value) => {
     console.log(value)
@@ -20,16 +21,25 @@ const Spells = props => {
         })
 
   }
+
+  const spellListIdChange = (e) => {
+    setSpellListId(e.spell_list_id)
+    setIsVisible(!isVisible)
+  }
+
   
   const spellList = spellLists.map((e, i) => {
     return (
   <>
   
-      <h1 className="spellListHeader" onClick={() => listLoad(e,e)}>{e.name}</h1> 
+      {/* <h1 className="spellListHeader" onClick={() => listLoad(e,e)}>{e.name}</h1>  */}
+      <h1 className="spellListHeader" onClick={() => spellListIdChange(e)}>{e.name}</h1> 
+     
       { isVisible ?  
       spells && spells.map(spell => (spell.spell_list_id == e.spell_list_id ? <Spell name={spell.name} /> : <div></div>))
-      : <div></div>
+      : <div>Not Visible</div>
       }   
+      
       </>
     );
   });
