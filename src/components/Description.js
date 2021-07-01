@@ -5,7 +5,7 @@ const Description = ({name, description, components, time, range, duration, dama
         <div>
             <Topbar>
                 <p>casting time: {time}</p>
-                <p>range: {range}</p>
+                {/* <p>range: {range}</p> */}
                 <p>components: {components}</p>
                 <p>duration: {duration}</p>
                 <p>damage: {damage}</p>
