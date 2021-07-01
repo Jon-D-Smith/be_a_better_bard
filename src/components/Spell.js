@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {useState} from 'react'
-const Spell = ({ name, sound, soundName}) => {
+import Description from "./Description";
+const Spell = ({ name, sound, soundName, instance}) => {
   
 soundName = "This is a test - Test Artist"
 const [isVisible, setisVisible] = useState(false)
@@ -11,6 +12,7 @@ const [isVisible, setisVisible] = useState(false)
         <div></div>
       <audio controls id="player"><source src={sound} type="audio/mp4" /></audio>
       {isVisible && <p className="artist">{soundName}</p>}
+      {isVisible && <Description />}
       </div>
       
       
