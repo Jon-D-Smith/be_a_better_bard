@@ -36,7 +36,7 @@ const Spells = props => {
     return (
   <>
        <h1 className="spellListHeader" onClick={() => spellListIdChange(e)}>{e.name}</h1> 
-      { spells && spells.map(spell => (spell.spell_list_id == e.spell_list_id ? <Spell name={spell.name}/> :<div></div>  ))}   
+      { spells && spells.map(spell => (spell.spell_list_id == e.spell_list_id ? <Spell name={spell.name} instance={spell}/> :<div></div>  ))}   
       </>
     );
   });

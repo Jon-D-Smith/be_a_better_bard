@@ -1,8 +1,9 @@
-const Description = ({components }) => {
+const Description = ({name, description }) => {
     
     return ( 
         <>
-        <h4>{components}</h4>
+        <h4>{name}</h4>
+        <h5>{description}</h5>
         </>
      );
 }
