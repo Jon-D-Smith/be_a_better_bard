@@ -13,7 +13,14 @@ const [isVisible, setisVisible] = useState(false)
       <audio controls id="player"><source src={sound} type="audio/mp4" /></audio>
       </div>
     <div className="description">
-    {isVisible && <Description name={instance.name} description={instance.description}/>}
+    {isVisible && <Description 
+                      name={instance.name} 
+                      description={instance.description} 
+                      components={instance.components}
+                      damage={instance.damage}
+                      time={instance.casting_time}
+                      duration={instance.duration}
+                      />}
     </div>
     
 
@@ -53,6 +60,7 @@ const SpellTab = styled.div`
     .description {
       grid-auto-columns: 1fr 1fr 1fr;
       grid-column-start: 2;
+      max-width: 80%;
     }
 `;
 
