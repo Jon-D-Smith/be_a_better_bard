@@ -12,7 +12,7 @@ const [isVisible, setisVisible] = useState(false)
         <div></div>
       <audio controls id="player"><source src={sound} type="audio/mp3" /></audio>
       </div>
-      {soundName}
+      <div className="soundName">{soundName}</div>
     <div className="description">
     {isVisible && <Description 
                       name={instance.name} 
@@ -62,6 +62,10 @@ const SpellTab = styled.div`
       grid-auto-columns: 1fr 1fr 1fr;
       grid-column-start: 2;
       max-width: 80%;
+    }
+    .soundName {
+      font-size: small;
+      margin-bottom: 1rem;
     }
 `;
 
