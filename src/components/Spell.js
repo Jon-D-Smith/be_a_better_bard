@@ -10,8 +10,9 @@ const [isVisible, setisVisible] = useState(false)
       <h3 >{name}</h3>
       <div className="sound" >
         <div></div>
-      <audio controls id="player"><source src={sound} type="audio/mp4" /></audio>
+      <audio controls id="player"><source src={sound} type="audio/mp3" /></audio>
       </div>
+      {soundName}
     <div className="description">
     {isVisible && <Description 
                       name={instance.name} 
