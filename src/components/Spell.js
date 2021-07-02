@@ -2,7 +2,8 @@ import styled from "styled-components";
 import {useState} from 'react'
 import Description from "./Description";
 const Spell = ({ name, sound, soundName, instance}) => {
-  
+
+sound = "https://www.computerhope.com/jargon/m/example.mp3"
 soundName = "This is a test - Test Artist"
 const [isVisible, setisVisible] = useState(false)
   return (
