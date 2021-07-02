@@ -4,11 +4,11 @@ const Description = ({name, description, components, time, range, duration, dama
     return ( 
         <div>
             <Topbar>
-                <p>casting time: {time}</p>
+                <p><span className="descriptor">Casting Time:</span> {time}</p>
                 {/* <p>range: {range}</p> */}
-                <p>components: {components}</p>
-                <p>duration: {duration}</p>
-                <p>damage: {damage}</p>
+                <p><span className="descriptor">Components:</span> {components}</p>
+                <p><span className="descriptor">Duration:</span> {duration}</p>
+                <p><span className="descriptor">Damage:</span> {damage}</p>
                 </Topbar>
         
         
@@ -21,6 +21,10 @@ const Topbar = styled.div`
 display: flex;
 justify-content: space-between;
 
+.descriptor{
+font-weight: 800;
+font-size:1.05em;
+}
 `;
 
 export default Description;
