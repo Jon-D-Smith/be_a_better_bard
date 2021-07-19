@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import {useState} from 'react'
-const Spell = ({ name, sound, soundName}) => {
-  
+import Description from "./Description";
+const Spell = ({ name, sound, soundName, instance}) => {
+
+sound = "https://www.computerhope.com/jargon/m/example.mp3"
 soundName = "This is a test - Test Artist"
 const [isVisible, setisVisible] = useState(false)
   return (
@@ -9,9 +11,21 @@ const [isVisible, setisVisible] = useState(false)
       <h3 >{name}</h3>
       <div className="sound" >
         <div></div>
-      <audio controls id="player"><source src={sound} type="audio/mp4" /></audio>
-      {isVisible && <p className="artist">{soundName}</p>}
+      <audio controls id="player"><source src={sound} type="audio/mp3" /></audio>
       </div>
+      <div className="soundName">{soundName}</div>
+    <div className="description">
+    {isVisible && <Description 
+                      name={instance.name} 
+                      description={instance.description} 
+                      components={instance.components}
+                      damage={instance.damage}
+                      time={instance.casting_time}
+                      duration={instance.duration}
+                      />}
+    </div>
+    
+
       
       
     </SpellTab>
@@ -44,6 +58,15 @@ const SpellTab = styled.div`
 
     .invisible {
       display: none;
+    }
+    .description {
+      grid-auto-columns: 1fr 1fr 1fr;
+      grid-column-start: 2;
+      max-width: 80%;
+    }
+    .soundName {
+      font-size: small;
+      margin-bottom: 1rem;
     }
 `;
 
