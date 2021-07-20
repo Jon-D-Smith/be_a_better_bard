@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import {useState} from 'react'
 import Description from "./Description";
+import soundByte from '../spell-sound.mp3';
 const Spell = ({ name, sound, soundName, instance}) => {
 
-sound = "https://www.computerhope.com/jargon/m/example.mp3"
+sound = soundByte
 soundName = "This is a test - Test Artist"
 const [isVisible, setisVisible] = useState(false)
   return (

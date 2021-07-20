@@ -1,14 +1,17 @@
-const { Pool } = require('pg');
+const { Pool } = require('pg')
+
 const pool = new Pool({
   connectionString: process.env.CONNECTION_STRING,
   ssl: {
     rejectUnauthorized: false
   }
 });
+
 module.exports = {
 
   getCharacterListById: async (req, res) => {
     const { id } = req.params
+    
     try {
       const result = await pool.query(`
         SELECT c.character_id, c.character_name, c.user_id, c.character_img, c.color, (
@@ -27,5 +30,7 @@ module.exports = {
       console.error(err);
       res.json("Error " + err);
     }
+    
   }
+  
 };
