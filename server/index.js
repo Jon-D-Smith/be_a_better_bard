@@ -20,7 +20,9 @@ const sessionConfig = {
     }
 }
 
+
 app.use(session(sessionConfig))
+
 
 const { getSpellList, getSpellsBySpellListId } = require('./controllers/spellController');
 const { getCharacterListById } = require('./controllers/characterController');
@@ -35,6 +37,7 @@ app.get("/spells", getSpellList);
 app.get("/spells/:id", getSpellsBySpellListId);
 app.get("/characters/:id", getCharacterListById);
 app.post('/users/create', createNewUser);
-app.get('/login', userLogin)
+app.post('/login', userLogin)
+
 
 app.listen(port, console.log(`Listening on ${port}`));
