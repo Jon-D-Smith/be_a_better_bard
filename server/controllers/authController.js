@@ -1,5 +1,6 @@
 const { Pool } = require('pg')
 const bcrypt = require('bcrypt');
+const session = require('express-session');
 const saltRounds = 12;
 const pool = new Pool({
   connectionString: process.env.CONNECTION_STRING,
@@ -7,6 +8,7 @@ const pool = new Pool({
     rejectUnauthorized: false
   }
 });
+
 
 
 module.exports = {
@@ -25,6 +27,23 @@ module.exports = {
         res.json("Error " + err);
       }
       
+    },
+
+
+    userLogin: async (req, res) => {
+      const {email, password} = req.body
+    try {
+
+      const user = await pool.query(`SELECT * FROM users WHERE email = $1`, [email])
+      if(await bcrypt.compare(password, user.rows[0].password)){
+        res.send(`${user.rows[0].first_name} Logged in`)
+      }  else {
+        res.send('Incorrect email or password. Please try again.')
+      }
+    } catch (err){
+      return res.status(500).send('No such user')
     }
     
-  };
+  }
+  
+};
