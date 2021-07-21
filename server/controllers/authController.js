@@ -46,6 +46,13 @@ module.exports = {
       return res.status(500).send('No such user')
     }
     
+  },
+
+  userLogout: (req, res) => {
+    console.log(req.session)
+    req.session.destroy()
+    console.log(req.session)
+    res.send('logged out')
   }
   
 };

@@ -36,7 +36,7 @@ app.use(session(sessionConfig))
 
 const { getSpellList, getSpellsBySpellListId } = require('./controllers/spellController');
 const { getCharacterListById } = require('./controllers/characterController');
-const { createNewUser, userLogin } = require("./controllers/authController");
+const { createNewUser, userLogin, userLogout } = require("./controllers/authController");
 app.use(cors())
 app.use(express.json());
 
@@ -54,5 +54,7 @@ app.get('/loginTest', async (req, res) => {
     console.log(user_id)
     res.send(user.rows[0].first_name)
 })
+
+app.get('/logout', userLogout)
 
 app.listen(port, console.log(`Listening on ${port}`));
