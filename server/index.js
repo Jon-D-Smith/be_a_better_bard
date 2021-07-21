@@ -20,6 +20,16 @@ const sessionConfig = {
     }
 }
 
+const { Pool } = require('pg')
+
+const pool = new Pool({
+    connectionString: process.env.CONNECTION_STRING,
+    ssl: {
+      rejectUnauthorized: false
+    }
+  });
+  
+
 
 app.use(session(sessionConfig))
 
@@ -38,6 +48,11 @@ app.get("/spells/:id", getSpellsBySpellListId);
 app.get("/characters/:id", getCharacterListById);
 app.post('/users/create', createNewUser);
 app.post('/login', userLogin)
-
+app.get('/loginTest', async (req, res) => {
+    const {user_id} = req.session
+    const user = await pool.query(`SELECT * FROM users WHERE user_id = $1`, [user_id])
+    console.log(user_id)
+    res.send(user.rows[0].first_name)
+})
 
 app.listen(port, console.log(`Listening on ${port}`));

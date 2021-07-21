@@ -36,8 +36,8 @@ module.exports = {
 
       const user = await pool.query(`SELECT * FROM users WHERE email = $1`, [email])
       if(await bcrypt.compare(password, user.rows[0].password)){
-        // req.session.user_id = user.rows[0].user_id
-        // console.log(req.session)
+        req.session.user_id = user.rows[0].user_id
+        console.log(req.session)
         res.send(`${user.rows[0].first_name} Logged in`)
       }  else {
         res.send('Incorrect email or password. Please try again.')
