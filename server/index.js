@@ -39,7 +39,7 @@ const { getCharacterListById } = require('./controllers/characterController');
 const { createNewUser, userLogin, userLogout } = require("./controllers/authController");
 app.use(cors())
 app.use(express.json());
-
+app.use(express.urlencoded({extended: true}))
 // app.use(express.static(`${__dirname}/../build`));
 
 //SPELLS ENDPOINT
@@ -52,7 +52,7 @@ app.get('/loginTest', async (req, res) => {
     const {user_id} = req.session
     const user = await pool.query(`SELECT * FROM users WHERE user_id = $1`, [user_id])
     console.log(user_id)
-    res.send(user.rows[0].first_name)
+    return res.json({user : user.rows[0].first_name})
 })
 
 app.get('/logout', userLogout)
