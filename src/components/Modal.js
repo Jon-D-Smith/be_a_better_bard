@@ -18,12 +18,10 @@ const Modal = props => {
   const { showModal, modalShowHide } = props
 
   const handleHideEvent = e => {
-    if (!e.target.closest('#modal')) {
+    if (!e.target.closest('#modal') || e.target.closest('.btn-btm')) {
       modalShowHide()
       window.removeEventListener('click', handleHideEvent)
-    } else {
-      window.removeEventListener('click', handleHideEvent)
-    };
+    }
   };
 
   useEffect(() => {
@@ -36,7 +34,7 @@ const Modal = props => {
     <ModalBody show={showModal} id="modal" >
       <div>{props.class}</div>
       <Footer className="footer">
-        <button className="btn-btm" onClick={() => { modalShowHide() }}>Close</button>
+        <button className="btn-btm" onClick={handleHideEvent}>Close</button>
       </Footer>
     </ModalBody>
   );
