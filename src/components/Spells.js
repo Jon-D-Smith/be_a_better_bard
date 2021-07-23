@@ -5,39 +5,46 @@ import axios from 'axios'
 import { useEffect, useState } from 'react';
 
 const Spells = props => {
-  const { spellLists} = props;
-  const [spells, setSpells] = useState(null)
+  const { spellLists } = props;
+  const [spells, setSpells] = useState([])
   const [spellListId, setSpellListId] = useState()
 
 
   const spellListIdChange = (e) => {
-    if(spellListId == e.spell_list_id){
-      setSpells(null)
+    if (spellListId == e.spell_list_id) {
+      setSpells([])
       setSpellListId()
-    }else{
+    } else {
 
       setSpellListId(e.spell_list_id)
     }
-  
+
   }
 
   useEffect(async () => {
-    if(spellListId){
+    if (spellListId) {
       await axios.get(`http://localhost:3001/spells/${spellListId}`)
-      .then(result => setSpells(result.data.results))
+        .then(result => setSpells(result.data.results))
     }
-    
-}, [spellListId])
+
+  }, [spellListId])
 
 
+  const listOfSpells = spells.map((e, i) => {
+    return (
+      <Spell
+        key={i}
+        name={e.name}
+        instance={e} />
+    );
+  });
 
-  
   const spellList = spellLists.map((e, i) => {
     return (
-  <>
-       <h1 className="spellListHeader" onClick={() => spellListIdChange(e)}>{e.name}</h1> 
-      { spells && spells.map(spell => (spell.spell_list_id == e.spell_list_id ? <Spell name={spell.name} instance={spell}/> :<div></div>  ))}   
-      </>
+      <div key={i}>
+        <h1 className="spellListHeader" onClick={() => spellListIdChange(e)}>{e.name}</h1>
+        {spells.length > 0 && spellListId === e.spell_list_id && listOfSpells}
+      </div>
     );
   });
 
