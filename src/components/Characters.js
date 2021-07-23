@@ -1,7 +1,12 @@
 import styled from 'styled-components'
 import Character from './Character'
 import Spells from './Spells'
-import Modal from './Modal';
+// import { Modal, ModalButton } from './Modal';
+import Modal from './Modal'
+// import ModalButton from './Modal'
+// import Modal from './Modal'
+
+import InputForm from './InputForm';
 
 import axios from 'axios'
 import { useEffect, useState, useRef } from 'react';
@@ -9,9 +14,7 @@ const Characters = props => {
     const [characterMap, setCharacterMap] = useState([]);
     const [characterId, setCharacterId] = useState(null);
     const [spellLists, setSpellLists] = useState();
-    const [show, setShow] = useState(false);
     const [addForm, setAddForm] = useState();
-    const node = useRef();
 
     useEffect(() => {
         axios.get(`/characters/${1}`)
@@ -32,12 +35,7 @@ const Characters = props => {
     };
 
     const handleModalClick = e => {
-        !show ? setAddForm(e) : setAddForm(null);
-        setShow(!show);
-    };
-
-    const handleOutsideClick = e => {
-        if (!e.target.closest('.modal')) handleModalClick();
+        setAddForm(e)
     };
 
     const characterList = characterMap.map((e, i) => {
@@ -64,7 +62,7 @@ const Characters = props => {
                         <h1>Characters</h1>
                     </header>
                     {characterMap.length && characterList}
-                    <button onClick={() => handleModalClick('character')}>+</button>
+                    <Modal.ModalButton compForm={'character'} compMethod={handleModalClick} />
                 </div>
                 <div className="box">
                     <header>
@@ -74,12 +72,13 @@ const Characters = props => {
                     {spellLists &&
                         <>
                             <Spells spellLists={spellLists}></Spells>
-                            <button onClick={() => handleModalClick('spellList')}>+</button>
+                            <Modal.ModalButton  compForm={'spell'} compMethod={handleModalClick} />
                         </>}
                 </div>
 
             </CharacterList>
-            { show && <Modal innerRef={node} hideModal={handleModalClick} handleOutsideClick={handleOutsideClick} whoAmI={addForm} characterId={characterId} />}
+            {/* { show && <Modal innerRef={node} hideModal={handleModalClick} handleOutsideClick={handleOutsideClick} whoAmI={addForm} characterId={characterId} />} */}
+            <Modal.Modal class={<InputForm whoAmI={addForm} />} />
         </>
 
 
