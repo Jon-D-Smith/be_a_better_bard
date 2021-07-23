@@ -1,32 +1,14 @@
 import axios from 'axios'
 import {useState} from 'react'
-import styled from 'styled-components'
 const Login = () => {
     const [email, setEmail ] = useState()
     const [password, setPassword ] = useState()
 
     const handleSubmit = (e) => {
-        axios({
-            method: 'post',
-            url: '/login',
-            data: {
-              email,
-              password
-            }
-          });
-
-          console.log(email, password)
+        axios.post('/login', {email, password})
     }
 
-    const LoginForm = styled.div`
-    display: grid;
-    grid-template-columns: 1;
-    justify-content: center;
-    align-items: center;
-    form{
-        margin-top: 20%;
-    }
-    `;
+
     return ( 
         
         <form method="POST" onSubmit={handleSubmit}>
