@@ -67,7 +67,6 @@ const Characters = props => {
                             <Modal.ModalButton compForm={'spell'} compMethod={handleModalClick} />
                         </>}
                 </div>
-
             </CharacterList>
             <Modal.Modal class={<InputForm whoAmI={addForm} />} />
         </>
