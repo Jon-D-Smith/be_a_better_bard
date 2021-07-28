@@ -54,7 +54,7 @@ const Characters = props => {
                         <h1>Characters</h1>
                     </header>
                     {characterMap.length > 0 && characterList}
-                    <Modal.ModalButton compForm={'character'} compMethod={handleModalClick} />
+                    <Modal.ModalButton text={'+'} compForm={'character'} compMethod={handleModalClick} />
                 </div>
                 <div className="box">
                     <header>
@@ -64,7 +64,7 @@ const Characters = props => {
                     {spellLists &&
                         <>
                             <Spells spellLists={spellLists}></Spells>
-                            <Modal.ModalButton compForm={'spell'} compMethod={handleModalClick} />
+                            <Modal.ModalButton text={'+'} compForm={'spell'} compMethod={handleModalClick} />
                         </>}
                 </div>
             </CharacterList>
