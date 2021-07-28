@@ -10,7 +10,7 @@ const ModalButton = props => {
       if (props.compForm) {
         props.compMethod(props.compForm);
       }
-    }}> + </button>
+    }}> {props.text} </button>
   )
 }
 
