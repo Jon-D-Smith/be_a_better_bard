@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import Character from './Character'
 import Spells from './Spells'
-import Modal from './Modal'
+import { Modal } from './Modal'
 
 import InputForm from './InputForm';
 
@@ -11,7 +11,8 @@ const Characters = props => {
     const [characterMap, setCharacterMap] = useState([]);
     const [characterId, setCharacterId] = useState(null);
     const [spellLists, setSpellLists] = useState();
-    const [addForm, setAddForm] = useState();
+    const [addedForm, setAddedForm] = useState();
+    const [visible, setVisible] = useState(false);
 
     useEffect(() => {
         axios.get(`/characters/${1}`)
@@ -26,12 +27,17 @@ const Characters = props => {
         })
     }, [characterId])
 
+    useEffect(() => {
+        setVisible(visible)
+    }, [visible])
+
     const handleClick = e => {
         setCharacterId(e.character_id)
     };
 
-    const handleModalClick = e => {
-        setAddForm(e)
+    const showModal = e => {
+        setAddedForm(e)
+        setVisible(true)
     };
 
     const characterList = characterMap.map((e, i) => {
@@ -54,7 +60,7 @@ const Characters = props => {
                         <h1>Characters</h1>
                     </header>
                     {characterMap.length > 0 && characterList}
-                    <Modal.ModalButton text={'+'} compForm={'character'} compMethod={handleModalClick} />
+                    <button onClick={() => showModal('Characters')}>+</button>
                 </div>
                 <div className="box">
                     <header>
@@ -64,11 +70,11 @@ const Characters = props => {
                     {spellLists &&
                         <>
                             <Spells spellLists={spellLists}></Spells>
-                            <Modal.ModalButton text={'+'} compForm={'spell'} compMethod={handleModalClick} />
+                            <button onClick={() => showModal('Spell')}>+</button>
                         </>}
                 </div>
             </CharacterList>
-            <Modal.Modal class={<InputForm whoAmI={addForm} />} />
+            <Modal title={addedForm} visible={visible} setVisible={setVisible}><div>This is where we will add stuff</div></Modal>
         </>
     );
 }
