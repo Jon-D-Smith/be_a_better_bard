@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
-import Modal from '../components/Modal'
-import Login from './Login'
+import Login from './Login';
+import Modal from './Modal';
+
 const Navbar = () => {
 
 
@@ -12,8 +13,9 @@ const Navbar = () => {
             <Link className="nav" to="home">Home</Link>
             <Link className="nav" to="/spells">All Spells</Link>
             <Link className="nav" to="/characters">Character</Link>
-            <Link className="nav nav-right" to="home">Profile</Link>
-            <Modal.ModalButton text={"Login"} />
+            {/* <Link className="nav nav-right" to="home">Profile</Link> */}
+            {/* <Modal.ModalButton class={'login'} text={'Login'} /> */}
+
         </Navigation>
     );
 }
