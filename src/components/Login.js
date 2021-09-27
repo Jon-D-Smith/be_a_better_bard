@@ -9,25 +9,22 @@ const Login = () => {
         axios.post('/login', { email, password })
     }
 
-
-    return (
-        <>
-            <h1>test</h1>
-            <form method="POST" onSubmit={handleSubmit}>
-                <div id="email-field">
-                    <label for="email">Email:</label>
-                    <input id="email" type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                </div>
-                <div id="password-field">
-                    <label for="password">Password:</label>
-                    <input id="password" type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                </div>
-                <button type="submit">Login</button>
-            </form>
-
-        </>
-
-    );
+    return ( 
+        
+        <form method="POST" onSubmit={handleSubmit}>
+            <div id="email-field">
+                <label for="email">Email:</label>
+                <input id="email" type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+            </div>
+            <div id="password-field">
+                <label for="password">Password:</label>
+                <input id="password" type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        
+      
+     );
 }
 
 export default Login;

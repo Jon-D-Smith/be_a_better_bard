@@ -23,7 +23,6 @@ const Home = () => {
       {/* {console.log('test')} */}
       <Characters style={{ width: '70%' }} />
       {/* <Spells characterMap={characterMap} characterKey={0}></Spells> */}
-      
       {/* <Modal show={show} handleClick={hideModal} style={{ display: 'none' }}></Modal> */}
     </div>
   );
