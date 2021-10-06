@@ -8,7 +8,7 @@ var cors = require('cors')
 const session = require("express-session");
 const sessionConfig = {
     name: 'session',
-    secret: process.env.SESSIONSECRET,
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
     cookie: {

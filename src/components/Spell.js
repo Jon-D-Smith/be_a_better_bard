@@ -3,10 +3,15 @@ import { useState } from "react";
 import Description from "./Description";
 import soundByte from "../spell-sound.mp3";
 import { Howl, Howler } from "howler";
+
 const Spell = ({ name, sound, soundName, instance }) => {
-  sound = soundByte;
+  // sound = soundByte;
+  sound = new Howl({
+    src: [soundByte]
+  })
   soundName = "This is a test - Test Artist";
   const [isVisible, setisVisible] = useState(false);
+
   return (
     <SpellTab
       style={{ backgroundColor: "purple" }}
@@ -15,9 +20,10 @@ const Spell = ({ name, sound, soundName, instance }) => {
       <h3>{name}</h3>
       <div className='sound'>
         <div></div>
-        <audio controls id='player'>
+        <button onClick={() => sound.play()}>Play</button>
+        {/* <audio controls id='player'>
           <source src={sound} type='audio/mp3' />
-        </audio>
+        </audio> */}
       </div>
       <div className='soundName'>{soundName}</div>
       <div className='description'>
