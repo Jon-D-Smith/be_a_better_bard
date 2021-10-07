@@ -5,6 +5,7 @@ const port = process.env.SERVER_PORT || 3001;
 const app = express();
 var cors = require('cors')
 
+
 const session = require("express-session");
 const sessionConfig = {
     name: 'session',

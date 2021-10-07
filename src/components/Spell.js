@@ -21,6 +21,8 @@ const Spell = ({ name, sound, soundName, instance }) => {
       <div className='sound'>
         <div></div>
         <button onClick={() => sound.play()}>Play</button>
+        <button onClick={() => sound.pause()}>Pause</button>
+        <button onClick={() => sound.stop()}>Stop</button>
         {/* <audio controls id='player'>
           <source src={sound} type='audio/mp3' />
         </audio> */}
